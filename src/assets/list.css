@@ -1,0 +1,32 @@
+ul, ol {
+    padding: 0;
+}
+
+ul.list-content {
+    width: 50vw;
+    height: 50vh;
+    overflow-y: auto;
+    padding: 24px;
+}
+
+ol.list-item {
+    position: relative;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.1);
+    animation-name: item-fade-in;
+    animation-duration: .3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes item-fade-in {
+    from {
+        opacity: 0;
+        left: -96px;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}

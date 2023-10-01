@@ -1,11 +1,35 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --theme-header-color: #333333;
-  --theme-font-color: #333333;
+  --theme-header-color: #ffffff;
+  --theme-font-color: #ffffff;
+  --theme-font-color-second: #dadada;
   --theme-link-color: #333333;
   --theme-background-color: #333333;
-  --font-size: 18px;
-  --border-radius: 12px;
+  --font-size: 24px;
+  --font-weight: 700;
+  --border-radius: 50px;
+}
+
+::selection {
+  color: rgb(255, 215, 0);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar {
+  border-radius: 12px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: none; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #aaaaaa; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dddddd; 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,15 +37,30 @@
   }
 }
 
+h1 {
+  font-size: 3.25em;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.sub-header{
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
 body {
+  margin: 0;
+  display: flex;
+  place-items: center;
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--theme-font-color);
+  background: linear-gradient(345deg, rgba(9,9,121,1) 0%, rgba(0,131,255,1) 100%);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: var(--font-size);
+  font-weight: var(--font-weight);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,19 +70,34 @@ body {
   text-align: center;
 }
 
+.input-search {
+  position: relative;
+}
+
+.input-search button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--border-radius);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
 input {
+  width: 100%;
   font-size: var(--font-size);
+  border: none;
   border-radius: var(--border-radius);
-  padding: 8px 12px;
+  padding: 8px 18px;
+  box-sizing: border-box;
 }
 
-ul, ol {
-  padding: 0;
+input[type=text] {
+  border: 2px solid #CCCCCC;
 }
 
-ol {
-  padding: 8px 12px;
-  margin-bottom: 8px;
-  border-radius: var(--border-radius);
-  background-color: rgba(0, 0, 0, 0.1);
+input:focus {
+  border: 2px solid #3b80ff;
 }
