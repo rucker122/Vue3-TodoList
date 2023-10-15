@@ -73,10 +73,11 @@ import { defineComponent, nextTick } from 'vue'
         });
       },
       checkItem(idx: number) {
+        // reverse flags
         this.itemList[idx].checked = !this.itemList[idx].checked;
       },
       removeItem(idx: number) {
-        console.log(idx);
+        // remove specific item
         this.itemList.splice(idx, 1);
       }
     },

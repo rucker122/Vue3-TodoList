@@ -1,3 +1,4 @@
 # task-tool
 
-There's no special things so far, just a practice of Vue3 x)
+A practice for Vue3...
+I know there are some issues needs to do
