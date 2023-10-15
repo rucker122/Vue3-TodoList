@@ -11,13 +11,58 @@ ul.list-content {
 
 ol.list-item {
     position: relative;
+    display: flex;
     padding: 8px 12px;
     margin-bottom: 8px;
     border-radius: var(--border-radius);
     background-color: rgba(0, 0, 0, 0.1);
+    transition: .3s;
     animation-name: item-fade-in;
     animation-duration: .3s;
     animation-timing-function: ease-out;
+}
+
+ol.item-fade-out {
+    animation-name: item-fade-out;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+ol.checked {
+    background-color: rgba(50, 255, 30, 0.3);
+}
+
+ol.list-item label {
+    text-align: left;
+    padding-left: 12px;
+}
+
+ol.list-item label span{
+    vertical-align: middle;
+}
+
+ol .item-label .checkmark {
+    position: absolute;
+    display: none;
+    left: -12px;
+}
+
+ol.checked .item-label .checkmark {
+    display: block;
+    animation-name: check-fade-in;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes check-fade-in {
+    from {
+        opacity: 0;
+        top: -12px;
+    }
+    to {
+        opacity: 1;
+        top: -4px;
+    }
 }
 
 @keyframes item-fade-in {
@@ -28,5 +73,14 @@ ol.list-item {
     to {
         opacity: 1;
         left: 0;
+    }
+}
+
+@keyframes item-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
